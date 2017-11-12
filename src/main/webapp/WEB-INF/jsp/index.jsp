@@ -52,7 +52,8 @@
 						<thead>
 							<tr>
 								<th>Id</th>
-								<th>Name</th>
+								<th>FirstName</th>
+								<th>LastName</th>
 								<th>Description</th>
 								<th>Date Created</th>
 								<th>Finished</th>
@@ -64,7 +65,8 @@
 							<c:forEach var="task" items="${tasks}">
 								<tr>
 									<td>${task.id}</td>
-									<td>${task.name}</td>
+									<td>${task.firstName}</td>
+									<td>${task.lastName}</td>
 									<td>${task.description}</td>
 									<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${task.dateCreated}"/></td>
 									<td>${task.finished}</td>
@@ -84,9 +86,15 @@
 				<form class="form-horizontal" method="POST" action="save-task">
 					<input type="hidden" name="id" value="${task.id}"/>
 					<div class="form-group">
-						<label class="control-label col-md-3">Name</label>
+						<label class="control-label col-md-3">First Name</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="name" value="${task.name}"/>
+							<input type="text" class="form-control" name="name" value="${task.firstName}"/>
+						</div>				
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Last Name</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="name" value="${task.lastName}"/>
 						</div>				
 					</div>
 					<div class="form-group">
